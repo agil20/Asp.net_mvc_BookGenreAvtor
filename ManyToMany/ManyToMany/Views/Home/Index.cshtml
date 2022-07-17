@@ -1,8 +1,31 @@
-﻿@{
+﻿@model List<Book>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<ul>
+
+@foreach (var item in Model)
+{
+    <li>@item.Name</li>
+    @foreach (var bookauthor in @item.BookAuthors)
+   {
+       <li>
+          AuthorName  @bookauthor.Author.Name
+       </li>
+   }
+
+  
+    @foreach (var img in @item.Images)
+   {
+      if (@img.IsMain)
+            {
+                 <span>@img.ImageUrl</span> <br />
+                
+            }
+   }
+   <hr />
+}
+
+
+</ul>

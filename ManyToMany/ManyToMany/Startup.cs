@@ -1,6 +1,8 @@
+using ManyToMany.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,9 +15,10 @@ namespace ManyToMany
 {
     public class Startup
     {
+        private readonly IConfiguration _config;
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _config = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -24,6 +27,12 @@ namespace ManyToMany
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddDbContext<AppDbContext>(opt =>
+
+            opt.UseSqlServer(_config.GetConnectionString("DefaultConnection"))
+
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
