@@ -1,4 +1,17 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const name = document.querySelector(".name")
+const adress = document.querySelector(".adress")
+const btn = document.querySelector(".myBtn")
+const phone = document.querySelector(".phone")
 
-// Write your JavaScript code.
+var formData = new FormData();
+const handleRequest = (ev) => {
+    ev.preventDefault();
+    formData.append("Name", name.value)
+    formData.append("Adress", adress.value)
+    formData.append("Phone", phone.value)
+    axios.post("/home/create", formData);
+    swal("Good job!", "You clicked the button!", "success");
+    
+}
+
+btn.addEventListener("click",handleRequest)

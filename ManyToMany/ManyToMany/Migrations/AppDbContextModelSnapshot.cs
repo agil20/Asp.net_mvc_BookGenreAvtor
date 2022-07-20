@@ -98,6 +98,27 @@ namespace ManyToMany.Migrations
                     b.ToTable("BookGenres");
                 });
 
+            modelBuilder.Entity("ManyToMany.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Adress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("ManyToMany.Models.Genre", b =>
                 {
                     b.Property<int>("Id")
@@ -164,13 +185,13 @@ namespace ManyToMany.Migrations
 
             modelBuilder.Entity("ManyToMany.Models.BookAuthor", b =>
                 {
-                    b.HasOne("ManyToMany.Models.Author", null)
+                    b.HasOne("ManyToMany.Models.Author", "Author")
                         .WithMany("BookAuthors")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ManyToMany.Models.Book", null)
+                    b.HasOne("ManyToMany.Models.Book", "Book")
                         .WithMany("BookAuthors")
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Cascade)

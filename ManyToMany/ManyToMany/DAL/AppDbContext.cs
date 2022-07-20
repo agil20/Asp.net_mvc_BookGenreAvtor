@@ -16,5 +16,6 @@ namespace ManyToMany.DAL
         public DbSet<SocialAccount> SocialAccounts { get; set; }
         public DbSet<BookAuthor> BookAuthors { get; set; }
         public DbSet<BookGenre> BookGenres { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }

@@ -32,7 +32,39 @@ namespace ManyToMany.Controllers
                 .ThenInclude(a=>a.Author).ToList();
            return View(books);
         }
+        public IActionResult Create()
+        { 
+        
+        return View();
+        
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromForm]Contact contact)
+        {
 
-       
+
+            Contact newContact = new Contact
+
+            {
+                
+                Name=contact.Name,
+                 Adress=contact.Adress,
+                Phone=contact.Phone,
+
+
+            };
+
+
+
+            await _context.Contacts.AddAsync(newContact);
+            _context.SaveChanges();
+
+
+            return RedirectToAction("Index");
+          
+
+        }
+
+
     }
 }

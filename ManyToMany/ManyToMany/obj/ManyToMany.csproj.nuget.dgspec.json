@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\Desktop\\Asp.net BookGenre\\ManyToMany\\ManyToMany\\ManyToMany.csproj": {}
+    "C:\\Users\\asus\\Desktop\\jsda-sorgu\\Asp.net_mvc_BookGenreAvtor\\ManyToMany\\ManyToMany\\ManyToMany.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\Desktop\\Asp.net BookGenre\\ManyToMany\\ManyToMany\\ManyToMany.csproj": {
+    "C:\\Users\\asus\\Desktop\\jsda-sorgu\\Asp.net_mvc_BookGenreAvtor\\ManyToMany\\ManyToMany\\ManyToMany.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\Desktop\\Asp.net BookGenre\\ManyToMany\\ManyToMany\\ManyToMany.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Desktop\\jsda-sorgu\\Asp.net_mvc_BookGenreAvtor\\ManyToMany\\ManyToMany\\ManyToMany.csproj",
         "projectName": "ManyToMany",
-        "projectPath": "C:\\Users\\asus\\Desktop\\Asp.net BookGenre\\ManyToMany\\ManyToMany\\ManyToMany.csproj",
+        "projectPath": "C:\\Users\\asus\\Desktop\\jsda-sorgu\\Asp.net_mvc_BookGenreAvtor\\ManyToMany\\ManyToMany\\ManyToMany.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\Desktop\\Asp.net BookGenre\\ManyToMany\\ManyToMany\\obj\\",
+        "outputPath": "C:\\Users\\asus\\Desktop\\jsda-sorgu\\Asp.net_mvc_BookGenreAvtor\\ManyToMany\\ManyToMany\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -63,6 +63,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [
